@@ -175,7 +175,7 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
 
 <header class="top">
   <div class="wrap">
-    <span class="onair">Exjobbsförslag Sveriges Radio, <span class="fill">VT 2027</span></span>
+    <span class="onair">Exjobbsförslag Sveriges Radio <span class="fill">VT 2027</span></span>
     <nav aria-label="Sidans delar">
       <a href="#demo">Demo</a>
       <a href="#ideen">Idén</a>
@@ -187,7 +187,7 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
 
 <main class="wrap">
   <div class="hero">
-    <h1 style="color: var(--low)">Sök i det som sades.</h1>
+    <h1 style="color: var(--low)">Minns du vad de sa, men inte var?</h1>
     <p class="lede">Ett examensarbete i dataanalys och maskininlärning som gör SR:s poddar och program sökbara på ämnesnivå: skriv vad du letar efter och hamna direkt i rätt segment, i stället för att lyssna igenom timmar av ljud.</p>
     <canvas class="wave" id="wave" aria-label="Illustration av ett radioavsnitt uppdelat i ämnessegment"></canvas>
     <div class="wave-legend mono"><span><i></i> automatiskt hittade ämnesgränser</span><span>ett avsnitt ≈ 1 h 40 min, 8–10 ämnen</span></div>
@@ -210,7 +210,7 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
             <div class="after-hit">
               <span class="mono">Morgonpasset i P3, segment 5 av 21</span>
               <b>bell hooks, kärlek som handling och GTA 6</b>
-              <span>"Hennes teori är att <mark>kärlek</mark> är <mark>handling</mark>, inte känsla."</span>
+              <span>"Hennes teori är att <mark>kärlek är handling</mark>, inte känsla."</span>
               <span class="mono after-ts">▶ sägs vid 00:12:12</span>
             </div>
             <p class="demo-note">Det här är ett riktigt resultat från vår demo. Prova själv i telefonen nedan.</p>
@@ -276,15 +276,15 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
       <div class="problem-grid">
       <div class="problem-text">
       <p>SR har ett enormt arkiv av poddar och program, men det går bara att söka på titlar och beskrivningar. Vi lyssnar dagligen på SR, men har saknat ett sätt att söka i vad som
-        faktiskt sägs i poddar och program.
-        <a href="https://sverigesradio.se/artikel/8902012" target="_blank" rel="noopener">SR:s nya AI-nyhetssök</a>
+        faktiskt sägs i poddar och program. Det som faktiskt sägs i ett avsnitt är osynligt. Den som minns att ett ämne togs upp i Studio Ett för ett år sedan har ingen chans att hitta det utan att lyssna igenom timmar av ljud.
+        <a href="https://www.aftonbladet.se/nojesbladet/a/vg1Am5/sveriges-radio-lanserar-sokfunktion-med-ai" target="_blank" rel="noopener">SR:s nya AI-nyhetssök</a>
         täcker idag artiklar, men poddar och program ingår inte än. SR
         <a href="https://vanliga-fragor-svar.sverigesradio.se/guide/transkribering" target="_blank" rel="noopener">transkriberar redan</a>
-        Sommar i P1, och nyhetssöket kan svara på frågor om programmet, men bara utifrån artiklar som skrivits om det.
+        Sommar i P1, och nyhetssöket kan svara på frågor om programmet, men bara utifrån artiklar som skrivits om det. 
         När vi frågade vilka experter som pratat om klimatförändringar i Sommar i P1 fick vi en nyhetsartikel från 2021
-        om en av sommarvärdarna, men inte vad hon sa eller var i programmet hon sa det. Texten finns, men den går inte att söka i än. För att kunna
+        om en av sommarvärdarna, men inte vad hon sa eller var i programmet hon sa det. Texten finns, men den går inte att söka i än. <b>För att kunna
         söka i dem behöver långa program först delas upp i ämnesavsnitt – och det
-        är det vi vill lösa. Det som faktiskt sägs i ett avsnitt är osynligt. Den som minns att ett ämne togs upp i Studio Ett för ett år sedan har ingen chans att hitta det utan att lyssna igenom timmar av ljud.</p>
+        är det vi vill lösa.</b> </p>
       <p>Både lyssnare och redaktörer skulle ha nytta av att kunna söka i innehållet: lyssnare för att hitta det de är intresserade av, redaktörer för att hitta arkivmaterial och följa en fråga över tid.</p>
       </div>
       <figure class="cmp problem-shot">
@@ -374,10 +374,10 @@ forlust = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(20.0))</code></pre>
     <div class="body">
       <div class="card together">
         <h3>Det här är vi</h3>
-        <p class="meta" style="color:var(--muted)"><span> Civilingenjör i Teknisk fysik, master i Tillämpad matematik och beräkningsmatematik inom datavetenskap, KTH, år 5</span></p>
+        <p class="meta" style="color:var(--muted); font-weight: 700"><span> Civilingenjör i Teknisk fysik, master i Tillämpad matematik och beräkningsmatematik inom datavetenskap, KTH, år 5</span></p>
         <p>Demon ovan byggde vi själva: transkribering med KB:s Whisper, egen ämnesuppdelning och en förenklad betydelsesökning. Det är vårt bästa bevis på att vi kan genomföra resten.</p>
         <p>Förutom att vi både är trogna SR fans, arbetar vi även bra ihop. Vi har skrivit kandidatarbetet ihop, så vi vet redan hur vi fungerar tillsammans: Ebba driver arbetet framåt, Alice har ett öga för detaljer. Vi har båda läst Search Engines and Information Retrieval på KTH, där vi byggde personaliserad sökning, och byggt och validerat ML-modeller som Junior Quantitative Analysts på SEB. </p>
-        <p>Förslaget är en utgångspunkt, och vi formar gärna upplägget efter vad som är mest användbart för SR. Vi kan börja i januari 2027 och ses gärna för att prata vidare.</p>
+        <p>Förslaget är en utgångspunkt, och vi formar gärna upplägget efter vad som är mest användbart för SR. Vi kan börja i januari 2027 och hörs gärna för att prata vidare.</p>
       </div>
       <div class="cards">
         <div class="card person">
@@ -398,7 +398,7 @@ forlust = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(20.0))</code></pre>
       </div>
       <div class="contact">
         <h3>Kontakt:</h3>
-        <p></p> ebba@gmail.com, +46 70 697 44 19 <br> asmundssonalice@gmail.com, +46 </p> 
+        <p></p> ebbalw@gmail.com | +46 70 697 44 19 <br> asmundssonalice@gmail.com | +46 </p> 
 
     
       </div>
@@ -512,5 +512,7 @@ document.querySelectorAll('.chips button').forEach(b => b.onclick = () => { $q.v
 window.addEventListener('resize', render);
 render();
 </script>
+<!-- Besöksräknare (GoatCounter, utan cookies). Byt DITTNAMN mot namnet du valde på goatcounter.com -->
+<script data-goatcounter="https://ebbbalw.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
