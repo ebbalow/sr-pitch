@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sök i det som sades</title>
+<title>Minns du vad de sa, men inte var?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -160,8 +160,11 @@ section { padding: 44px 0; border-top: 1px solid var(--line); }
 
 .person { display: grid; gap: 10px; }
 .together { grid-column: 1 / -1; }
-.contact { display: grid; grid-template-columns: auto 1fr; gap: 0 8px; margin: 1em 0; }
-.contact p { margin: 0; }
+.contact { margin-top: 22px; }
+.contact h3 { margin-bottom: 10px; }
+.contact .cards p { margin: 0; line-height: 1.6; }
+.contact a { color: inherit; }
+.contact .who { font-weight: 700; }
 .person .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font: 800 1.2rem var(--display); }
 .skills { display: flex; flex-wrap: wrap; gap: 6px; }
 .skills span { font: 0.78rem var(--mono); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; }
@@ -190,7 +193,7 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
     <h1 style="color: var(--low)">Minns du vad de sa, men inte var?</h1>
     <p class="lede">Ett examensarbete i dataanalys och maskininlärning som gör SR:s poddar och program sökbara på ämnesnivå: skriv vad du letar efter och hamna direkt i rätt segment, i stället för att lyssna igenom timmar av ljud.</p>
     <canvas class="wave" id="wave" aria-label="Illustration av ett radioavsnitt uppdelat i ämnessegment"></canvas>
-    <div class="wave-legend mono"><span><i></i> automatiskt hittade ämnesgränser</span><span>ett avsnitt ≈ 1 h 40 min, 8–10 ämnen</span></div>
+    <div class="wave-legend mono"><span><i></i> automatiskt hittade ämnesgränser</span><span>ett avsnitt ≈ 1 h 30 min, 8–10 ämnen</span></div>
   </div>
 
   <section id="idag">
@@ -258,7 +261,7 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
           </div>
         </div>
         <div class="demo-side">
-          <p class="demo-note">Byggd på ett riktigt avsnitt av Morgonpasset i P3 (1 h 33 min), transkriberat med KB:s svenska Whisper-modell och uppdelat i 21 ämnessegment. Uppdelningen är gjord för hand i den här versionen. Att göra den automatiskt är fråga 1 i exjobbet.</p>
+          <p class="demo-note">Byggd på ett riktigt avsnitt av Morgonpasset i P3 (1 h 33 min), transkriberat med KB:s svenska Whisper-modell och uppdelat i 21 ämnessegment. Uppdelningen är föreslagen av AI och kontrollerad för hand i den här versionen. Att låta en AI göra det för varje avsnitt blir dyrt i längden och svårt att kontrollera. En egen modell som gör det automatiskt är fråga 1 i exjobbet.</p>
           <h3>Så fungerar det</h3>
           <p>Sökningen letar i <b>det som faktiskt sades</b>, inte bara i titlar. Varje träff är ett ämnessegment, inte ett helt avsnitt, och spelas upp från rätt minut.</p>
           <p>Byt mellan <b>Exakta ord</b> och <b>Betydelse</b>. Ordet "datorspel" sägs aldrig i avsnittet, så exakt sökning ger inga träffar. Betydelsesökningen hittar ändå segmenten om GTA 6 och Counter-Strike. I demon är den förenklad med handskrivna synonymlistor. Att bygga riktig semantisk sökning och mäta skillnaden ordentligt är fråga 2 i exjobbet.</p>
@@ -299,9 +302,9 @@ footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--m
   <section>
     <div class="sec-head"><span class="num">03</span><h2>Vi bygger vidare på Pick and mix</h2></div>
     <div class="body">
-      <p>SR byggde 2021 prototypen <i>Pick and mix podcast segmenter</i> på Studio Ett: avsnitten delades upp i ämnessegment, transkriberades och gjordes sökbara, med likhetssökning och tidslinjer. Två saker blev dock kvar på demostadiet:</p>
+      <p>SR byggde 2021 prototypen <i><a href=https://om.sverigesradio.se/post/projekt-gor-poddar-och-on-demand-radio-mer-lattillgangligt-engel target="_blank" rel="noopener"> Pick and mix podcast segmenter</i></a> på Studio Ett: avsnitten delades upp i ämnessegment, transkriberades och gjordes sökbara, med likhetssökning och tidslinjer. Två saker blev dock kvar på demostadiet:</p>
       <div class="cards">
-        <div class="card"><span class="tag">Kvar att lösa</span><h3>Uppdelningen gjordes för hand</h3><p>Den automatiska uppdelningen med hjälp av signaturen var bara ett proof of concept. Utan automatisk uppdelning går det inte att skala upp.</p></div>
+        <div class="card"><span class="tag">Kvar att lösa</span><h3>Uppdelningen kontrollerades för hand</h3><p>Den automatiska uppdelningen med hjälp av signaturen var bara ett proof of concept. Utan automatisk uppdelning går det inte att skala upp.</p></div>
         <div class="card"><span class="tag">Kvar att lösa</span><h3>Ingen mätning av kvaliteten</h3><p>Hur ofta hittar sökningen rätt? Betyder matchningsfärgerna något? Det behöver vara känt innan något når lyssnarna.</p></div>
         <div class="card"><span class="tag">Nytt sedan 2021</span><h3>Bättre verktyg för svenska</h3><p>Taligenkänning som KB:s svenska Whisper-modell och nyare svenska språkmodeller gör allt detta mycket mer realistiskt idag.</p></div>
       </div>
@@ -361,11 +364,11 @@ forlust = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(20.0))</code></pre>
     <div class="sec-head"><span class="num">05</span><h2>Vad SR får ut av det</h2></div>
     <div class="body">
       <div class="cards">
-        <div class="card"><h3>Ett mätt beslutsunderlag</h3><p>Siffror på hur bra uppdelning och sökning fungerar, och vilken metod som är bäst för SR:s material.</p></div>
+        <div class="card"><h3>Beslutsunderlag</h3><p>Siffror på hur bra uppdelning och sökning fungerar, och vilken metod som är bäst för SR:s material.</p></div>
         <div class="card"><h3>Kod och metod som går att återanvända</h3><p>En pipeline från ljud till sökbara segment, dokumenterad så att SR kan bygga vidare.</p></div>
         <div class="card"><h3>Ett steg närmare lyssnarna</h3><p>Det som krävs innan sökning i innehållet kan bli en funktion i appen.</p></div>
       </div>
-      <p><b>Vad vi behöver från SR:</b> tillgång till ljud från ett par hundra avsnitt, gärna koden och datan från 2021, en handledare som kan hjälpa oss att förankra arbetet i Sveriges Radios behov och ge återkoppling under projektets gång.</p>
+      <p><b>Vad vi behöver från SR:</b> tillgång till ljud från ett par hundra avsnitt, gärna koden och datan från 2021, och några timmar från en handledare för lite vägledning.</p>
     </div>
   </section>
 
@@ -373,17 +376,17 @@ forlust = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(20.0))</code></pre>
     <div class="sec-head"><span class="num">06</span><h2>Om oss</h2></div>
     <div class="body">
       <div class="card together">
-        <h3>Det här är vi</h3>
-        <p class="meta" style="color:var(--muted); font-weight: 700"><span> Civilingenjör i Teknisk fysik, master i Tillämpad matematik och beräkningsmatematik inom datavetenskap, KTH, år 5</span></p>
-        <p>Demon ovan byggde vi själva: transkribering med KB:s Whisper, egen ämnesuppdelning och en förenklad betydelsesökning. Det är vårt bästa bevis på att vi kan genomföra resten.</p>
+        <p class="meta" style="color:var(--muted); font-weight: 700"><span> Civilingenjör i Teknisk fysik, master i Tillämpad matematik och beräkningsmatematik inom datavetenskap – KTH, år 5</span></p>
+        <p>Demon ovan tog vi fram med hjälp av AI-verktyg: transkribering med KB:s Whisper, en ämnesuppdelning som AI föreslog och vi kontrollerade för hand, och en förenklad betydelsesökning. Den visar idén. I exjobbet bygger och utvärderar vi den riktiga modellen.</p>
         <p>Förutom att vi både är trogna SR fans, arbetar vi även bra ihop. Vi har skrivit kandidatarbetet ihop, så vi vet redan hur vi fungerar tillsammans: Ebba driver arbetet framåt, Alice har ett öga för detaljer. Vi har båda läst Search Engines and Information Retrieval på KTH, där vi byggde personaliserad sökning, och byggt och validerat ML-modeller som Junior Quantitative Analysts på SEB. </p>
         <p>Förslaget är en utgångspunkt, och vi formar gärna upplägget efter vad som är mest användbart för SR. Vi kan börja i januari 2027 och hörs gärna för att prata vidare.</p>
-      <div class="skills"><span>Python</span><span>maskininlärning</span><span>modellering</span><span>statistik</span><span>dataanalys</span></div>
+        <div class="skills"><span>Python</span><span>maskininlärning</span><span>modellering</span><span>statistik</span><span>dataanalys</span></div>
       </div>
       <div class="cards">
         <div class="card person">
           <div class="avatar">A</div>
           <h3><span>Alice Asmundsson</span></h3>
+          
           <p class="meta" style="color:var(--muted)">Modellerar, analyserar och granskar</p>
           <p>Genom mina studier har jag arbetat med statistisk modellering och maskininlärning, och jag tycker särskilt om att undersöka hur olika metoder kan användas för att hitta mönster och dra slutsatser ur komplexa datamängder.</p>
         </div>
@@ -391,22 +394,24 @@ forlust = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(20.0))</code></pre>
           <div class="avatar">E</div>
           <h3><span>Ebba Löwenberg</span></h3>
           <p class="meta" style="color:var(--muted)">Bygger, testar och driver framåt</p>
-          <p>På SEB byggde och validerade jag ML-modeller på riktig data, från enkel baslinje till XGBoost, och stresstestade dem för att se var de slutar fungera. Det är precis vad exjobbet kräver: bygga något som fungerar och visa ärligt hur bra det är.</p>
+          <p>På SEB byggde jag maskininlärningsmodeller som uppskattade vad en affär var värd på ungefär halva tiden mot det gamla programmet, och testade dem tills jag visste var de slutade fungera. Jag gillar att ta en idé hela vägen till något som faktiskt fungerar.</p>
+          <p>Jag <a href="https://www.sverigesradio.se/artikel/6038127" target="_blank" rel="noopener">intervjuades också i SR om datorer i skolan</a> för tolv år sedan. Nu vill jag ge ett bättre svar på hur tekniken kan användas.</p>  
         </div>
 
       </div>
-      <div class="contact">
-        <h3>Kontakt:</h3>
-        <p></p> ebbalw@gmail.com | +46 70 697 44 19 <br> asmundssonalice@gmail.com | +46 70 775 80 08 </p> 
-
-    
+      <div class="contact" id="kontakt">
+        <h3>Kontakt</h3>
+        <div class="cards">
+          <p><span class="who">Alice Asmundsson</span><br><a href="mailto:asmundssonalice@gmail.com">asmundssonalice@gmail.com</a><br><a href="tel:+46707758008">+46 70-775 80 08</a></p>
+          <p><span class="who">Ebba Löwenberg</span><br><a href="mailto:ebbalw@gmail.com">ebbalw@gmail.com</a><br><a href="tel:+46706974419">+46 70-697 44 19</a></p>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap"><p>Ett exjobbsförslag från studenter, inte en tjänst från Sveriges Radio. Demon bygger på ett riktigt avsnitt av Morgonpasset i P3; ämnesuppdelningen är gjord för hand och betydelsesökningen är förenklad.</p></div>
+  <div class="wrap"><p>Ett exjobbsförslag från studenter, inte en tjänst från Sveriges Radio. Demon bygger på ett riktigt avsnitt av Morgonpasset i P3. Ämnesuppdelningen är föreslagen av AI och kontrollerad för hand, och betydelsesökningen är förenklad.</p></div>
 </footer>
 
 <script>
